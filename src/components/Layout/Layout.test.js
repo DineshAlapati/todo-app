@@ -8,7 +8,6 @@ import thunk from 'redux-thunk';
 import mockResponse from '../../tools/mockResponse';
 import App from '../App';
 import Home from '../../routes/home/Home';
-import Login from '../../routes/login/Login';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -28,10 +27,6 @@ const routes = [
         path: '/',
         exact: true,
         component: Home,
-      },
-      {
-        path: '/login',
-        component: Login,
       },
     ],
   },
