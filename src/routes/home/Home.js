@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <Layout>
-        <p>Welcome to light portal</p>
+        <h1>TODOs</h1>
       </Layout>
     );
   }
