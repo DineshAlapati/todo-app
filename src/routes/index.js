@@ -1,5 +1,4 @@
 import Home from './home/Home';
-import Login from './login/Login';
 
 /**
  * Global Routes
@@ -13,11 +12,6 @@ export default [
         exact: true,
         component: Home,
         label: 'Home',
-      },
-      {
-        path: '/login',
-        component: Login,
-        label: 'Login',
       },
     ],
   },
