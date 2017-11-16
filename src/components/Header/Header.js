@@ -1,39 +1,44 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ButtonAppBar from './ButtonAppBar';
+import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import Paper from 'material-ui/Paper';
+import Typography from 'material-ui/Typography';
+
+const styles = {
+  root: {
+    paddingTop: 10,
+    marginTop: 50,
+    marginLeft: 50,
+    marginRight: 50,
+    flex: 'auto',
+    backgroundColor: 'grey',
+  },
+};
 
 /**
  * Connected Component
- * Renders ButtonBar and fetches MenuService onMount
+ * Renders Header Component
  */
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    /**
-    * @type {object}
-    * @property {string} title - Title.
-    * @property {object} routes - Routes.
-    */
-    this.state = {
-      title: 'Hello',
-      routes: [
-        {
-          route: '/login',
-          label: 'Login',
-        },
-      ],
-    };
-  }
+  static propTypes = {
+    classes: PropTypes.shape({
+      root: PropTypes.string.isRequired,
+    }).isRequired,
+  };
 
   render() {
     return (
       <div>
-        {this.state.routes ? (
-          <ButtonAppBar title={this.state.title} routes={this.state.routes} />
-        ) : null}
+        <Paper className={this.props.classes.root}>
+          <Typography type="display4" component="h1">
+            Todos
+          </Typography>
+        </Paper>
+
       </div>
     );
   }
 }
 
-export default connect()(Header);
+export default withStyles(styles)(connect()(Header));
